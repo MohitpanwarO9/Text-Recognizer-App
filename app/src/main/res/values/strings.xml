@@ -3,4 +3,5 @@
     <string name="logout">Logout</string>
     <string name="image">Take Image</string>
     <string name="NO_text_Found">No text Found</string>
+    <string name="Verify_Activity_heading">CODE</string>
 </resources>

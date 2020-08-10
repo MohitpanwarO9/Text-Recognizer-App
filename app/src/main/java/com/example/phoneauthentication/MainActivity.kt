@@ -3,7 +3,6 @@ package com.example.phoneauthentication
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -36,18 +35,19 @@ class MainActivity : AppCompatActivity() {
         takeImage.setOnClickListener {
             result.text=null
             checkPermission()
+
         }
 
-        camraApp.setOnClickListener {
-            result.text.clear()
-            val intent=Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-               if(intent.resolveActivity(this.packageManager)!=null){
-                startActivityForResult(intent,9)
-               }
-            else{
-                   Toast.makeText(this, "Unable to open Camera", Toast.LENGTH_SHORT).show()
-               }
-        }
+//        camraApp.setOnClickListener {
+//            result.text.clear()
+//            val intent=Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//               if(intent.resolveActivity(this.packageManager)!=null){
+//                startActivityForResult(intent,9)
+//               }
+//            else{
+//                   Toast.makeText(this, "Unable to open Camera", Toast.LENGTH_SHORT).show()
+//               }
+//        }
 
     }
 
@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private var selectImageUri: Uri?=null
-    private var imageBitmap:Bitmap?=null
+    //private var imageBitmap:Bitmap?=null
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
@@ -108,13 +108,13 @@ class MainActivity : AppCompatActivity() {
 
                 prepareImage()
         }
-        else if (requestCode== 9 && resultCode == Activity.RESULT_OK && data != null){
-
-           imageBitmap =data.extras!!.get("data") as Bitmap
-            imageDisplay.setImageBitmap(imageBitmap)
-            Toast.makeText(this, "Its doing its work", Toast.LENGTH_SHORT).show()
-                bitImageCamera()
-        }
+//        else if (requestCode== 9 && resultCode == Activity.RESULT_OK && data != null){
+//
+//           imageBitmap =data.extras!!.get("data") as Bitmap
+//            imageDisplay.setImageBitmap(imageBitmap)
+//            Toast.makeText(this, "Its doing its work", Toast.LENGTH_SHORT).show()
+//                bitImageCamera()
+//        }
 
         else{
             Toast.makeText(this, "There is some error Please try again", Toast.LENGTH_SHORT).show()
@@ -167,10 +167,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun bitImageCamera(){
-        val imageCam=InputImage.fromBitmap(imageBitmap!!,0)
-        recognitionPart(imageCam)
-    }
+//    private fun bitImageCamera(){
+//        val imageCam=InputImage.fromBitmap(imageBitmap!!,0)
+//        recognitionPart(imageCam)
+//    }
 
 
 
@@ -187,7 +187,9 @@ class MainActivity : AppCompatActivity() {
         when(item.itemId){
                 R.id.LogoutBt-> {
                     mAuth.signOut()
-                    startActivity(Intent(this,VerifyPhone::class.java))
+                    val intent=Intent(this,VerifyPhone::class.java)
+                    intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
                 }
         }
 

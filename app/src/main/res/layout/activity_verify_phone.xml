@@ -1,95 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerifyPhone"
     android:background="#C6B7B7"
-    >
+    tools:context=".VerifyPhone">
 
-    <EditText
-        android:id="@+id/etPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="140dp"
-        android:ems="10"
-        android:hint="Phone"
-        android:textSize="25sp"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
-        android:background="@drawable/background_text_fied"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/Edcode"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:background="@drawable/background_text_fied"
-        android:hint="Code"
-        android:paddingLeft="12dp"
-        android:textSize="25sp"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/etPhone"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/etPhone"
-        app:layout_constraintTop_toBottomOf="@+id/etPhone" />
-
-    <Button
-        android:id="@+id/sendBt"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="send code"
-        android:padding="12dp"
-        android:background="#2196F3"
-        android:textColor="#ffff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Edcode" />
+        android:orientation="vertical">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/verify"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="verify"
-        android:background="#2196F3"
-        android:textColor="#ffff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sendBt" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="11dp"
-        android:background="#fff"
-        android:text="If Not Automatically Verified"
-        android:textSize="20dp"
-        android:padding="12dp"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/verify"
-        app:layout_constraintEnd_toEndOf="@+id/verify"
-        app:layout_constraintStart_toStartOf="@+id/verify" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Verify_Activity_heading"
+            android:textSize="49sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/Black"/>
+    </LinearLayout>
+</ScrollView>

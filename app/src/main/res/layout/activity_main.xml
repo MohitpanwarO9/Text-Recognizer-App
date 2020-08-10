@@ -5,20 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#F1EEEE">
+    android:background="#F1EEEE"
+    >
 
 
     <ImageView
         android:id="@+id/imageDisplay"
-        android:layout_width="412dp"
-        android:layout_height="259dp"
+        android:layout_width="369dp"
+        android:layout_height="260dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="24dp"
         android:contentDescription="TODO"
         android:src="@drawable/take"
         app:layout_constraintBottom_toTopOf="@+id/takeImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -27,13 +30,13 @@
         android:id="@+id/takeImage"
         android:layout_width="113dp"
         android:layout_height="51dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="28dp"
+        android:layout_marginEnd="148dp"
         android:layout_marginBottom="16dp"
         android:text="@string/image"
         app:layout_constraintBottom_toTopOf="@+id/result"
-        app:layout_constraintEnd_toStartOf="@+id/camraApp"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageDisplay" />
 
@@ -55,18 +58,6 @@
         app:layout_constraintTop_toBottomOf="@+id/takeImage"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/camraApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="34dp"
-        android:text="open camra"
-        app:layout_constraintBottom_toTopOf="@+id/result"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/takeImage"
-        app:layout_constraintTop_toBottomOf="@+id/imageDisplay"
-        app:layout_constraintVertical_bias="1.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
